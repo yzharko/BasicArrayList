@@ -3,6 +3,7 @@ package basicQuickSortTest;
 import basicArrayList.BasicArrayList;
 import basicQuickSort.BasicQuickSort;
 import org.junit.jupiter.api.Test;
+import someGoth.Goth;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,6 +38,22 @@ public class BasicQuickSortTest {
             arrayList.add(rand.nextDouble());
         }
         BasicArrayList <Double> basicArrayList = new BasicArrayList<>(arrayList);
+
+        Collections.sort(arrayList);
+        BasicQuickSort.quicksort(basicArrayList);
+
+        assertArrayEquals(arrayList.toArray(), basicArrayList.toArray());
+    }
+    @Test
+    public void basicQuickSortForBasicArrayListOfGoths() {
+        final int capacity = 2;
+        final Goth goth = new Goth("Cheburashka", 12);
+        final Goth yaGoth = new Goth("Gena", 150);
+
+        ArrayList <Goth> arrayList = new ArrayList<>(capacity);
+        arrayList.add(yaGoth);
+        arrayList.add(goth);
+        BasicArrayList <Goth> basicArrayList = new BasicArrayList<>(arrayList);
 
         Collections.sort(arrayList);
         BasicQuickSort.quicksort(basicArrayList);
