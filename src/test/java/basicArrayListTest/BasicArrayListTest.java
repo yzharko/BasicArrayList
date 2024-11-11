@@ -67,7 +67,18 @@ public class BasicArrayListTest {
 
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void setElementToTheBasicArrayList() {
+        BasicArrayList <Integer> basicArrayList = new BasicArrayList<>();
+        basicArrayList.add(1);
+        final int index = 0;
+        final Integer expected = 2;
 
+        basicArrayList.set(index, expected);
+        final Integer actual = basicArrayList.get(index);
+
+        assertEquals(expected, actual);
+    }
     @Test
     public void addElementToTheBasicArrayList() {
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>();
@@ -88,6 +99,18 @@ public class BasicArrayListTest {
         final Object[] expected = new Object[] {5, 5, 7, 5, 5, 5};
 
         assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void addAllElementsToTheBasicArrayList() {
+        final int capacity = 5;
+        BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
+        BasicArrayList <Integer> toCopy = new BasicArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            toCopy.add(5);
+        }
+
+        basicArrayList.addAll(toCopy);
+        assertArrayEquals(toCopy.toArray(), basicArrayList.toArray());
     }
     @Test
     public void getElementFromBasicArrayListAtSpecifiedIndex() {
