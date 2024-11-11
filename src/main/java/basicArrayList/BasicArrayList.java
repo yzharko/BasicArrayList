@@ -61,13 +61,33 @@ public class BasicArrayList <T> {
      * @param index место на которое будет добавлен элемент
      * @param element элемент, добавляемый в коллекцию
      */
-    public void add(int index, T element) {
+    public boolean add(int index, T element) {
         final int tempSize = size;
         Object[] newArray = array;
-        if (tempSize == newArray.length)
+        if (tempSize == newArray.length) {
             newArray = expand();
+        }
         System.arraycopy(newArray, index, newArray, index + 1, tempSize - index); newArray[index] = element;
         size = tempSize + 1;
+        return true;
+    }
+
+    /**
+     * Добавление всех элементов BasicArrayList в уже существующий BasicArrayList
+     * @param newArray BasicArrayList элементы которого будут добавлены
+     * @return true при успешной вставке, false при передаче пустого BasicArrayList
+     */
+    public boolean addAll(BasicArrayList newArray) {
+        int newSize = newArray.size;
+        if (newSize == 0)
+            return false;
+        Object[] elementData = array;
+        final int tempSize = size;
+        if (newSize > elementData.length - tempSize)
+            elementData = expand();
+        System.arraycopy(newArray.array, 0, elementData, tempSize, newSize);
+        size = tempSize + newSize;
+        return true;
     }
     /**
      * Получение элемента по указанному индексу
@@ -105,6 +125,21 @@ public class BasicArrayList <T> {
             throw new NoSuchElementException();
         } else {
             return array(last);
+        }
+    }
+
+    /**
+     * Замена элемента по указанному индексу на новый
+     * @param index место элемента, который будет заменён
+     * @param element новый элемент
+     * @throws NoSuchElementException при отсутствии указанного индекса
+     */
+    public void set(int index, T element) {
+        if (index >= 0 && index < size) {
+            T oldValue = array(index);
+            array[index] = element;
+        } else {
+            throw new NoSuchElementException();
         }
     }
     /**
