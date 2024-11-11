@@ -19,6 +19,20 @@ public class Goth implements Comparable <Goth> {
     }
 
     /**
+     * Получить имя
+     * @return имя объекта
+     */
+    public String getGothName() {
+        return gothName_;
+    }
+    /**
+     * Получить уровень
+     * @return уровень объекта
+     */
+    public int getGothicLevel() {
+        return gothicLevel_;
+    }
+    /**
      * Предоставляет информацию об экземпляре класса
      * @return строка с именем и уровнем
      */
