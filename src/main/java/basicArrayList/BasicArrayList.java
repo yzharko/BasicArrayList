@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.NoSuchElementException;
 
+/**
+ * Непотокобезопасная реализация, основанная на ArrayList. Предоставляет пользователю набор методов по добавлению, получению, изменению, удалению и очистке элементов.
+ */
 public class BasicArrayList <T> {
     private Object[] array;
     private int size;
