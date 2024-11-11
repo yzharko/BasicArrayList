@@ -1,29 +1,46 @@
 package basicQuickSortTest;
 
+import basicArrayList.BasicArrayList;
 import basicQuickSort.BasicQuickSort;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class BasicQuickSortTest {
     @Test
-    public void basicQuickSortForArrayOfIntegers() {
+    public void basicQuickSortForBasicArrayListOfIntegers() {
         final int capacity = 10;
-        Integer[] array = new Integer[capacity];
+        ArrayList <Integer> arrayList = new ArrayList<>(capacity);
         Random rand = new Random();
 
         for (int i = 0; i < capacity; ++i) {
-            array[i] = rand.nextInt(10);
+            arrayList.add(rand.nextInt(100));
         }
+        BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(arrayList);
 
-        Integer[] yaArray = new Integer[capacity];
-        System.arraycopy(array, 0, yaArray, 0, capacity);
+        Collections.sort(arrayList);
+        BasicQuickSort.quicksort(basicArrayList);
 
-        BasicQuickSort.quicksort(array);
-        Arrays.sort(yaArray);
-        assertArrayEquals(yaArray, array);
+        assertArrayEquals(arrayList.toArray(), basicArrayList.toArray());
+    }
+    @Test
+    public void basicQuickSortForBasicArrayListOfDoubles() {
+        final int capacity = 10;
+        ArrayList <Double> arrayList = new ArrayList<>(capacity);
+        Random rand = new Random();
+
+        for (int i = 0; i < capacity; ++i) {
+            arrayList.add(rand.nextDouble());
+        }
+        BasicArrayList <Double> basicArrayList = new BasicArrayList<>(arrayList);
+
+        Collections.sort(arrayList);
+        BasicQuickSort.quicksort(basicArrayList);
+
+        assertArrayEquals(arrayList.toArray(), basicArrayList.toArray());
     }
 }
