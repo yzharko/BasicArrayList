@@ -5,17 +5,17 @@ package somegoth;
  * Имеет 2 параметра: имя и уровень
  */
 public class Goth implements Comparable <Goth> {
-    private String gothName_ = "";
-    private int gothicLevel_ = 0;
+    private String gothName = "";
+    private int gothicLevel = 0;
 
     /**
      * Создаёт экземпляр класса с переданными парметрами
-     * @param gothName имя
-     * @param gothicLevel уровень
+     * @param name имя
+     * @param level уровень
      */
-    public Goth(String gothName, int gothicLevel) {
-        gothName_ = gothName;
-        gothicLevel_ = gothicLevel;
+    public Goth(String name, int level) {
+        gothName = name;
+        gothicLevel = level;
     }
 
     /**
@@ -23,21 +23,21 @@ public class Goth implements Comparable <Goth> {
      * @return имя объекта
      */
     public String getGothName() {
-        return gothName_;
+        return gothName;
     }
     /**
      * Получить уровень
      * @return уровень объекта
      */
     public int getGothicLevel() {
-        return gothicLevel_;
+        return gothicLevel;
     }
     /**
      * Предоставляет информацию об экземпляре класса
      * @return строка с именем и уровнем
      */
     public String getInfo() {
-        return gothName_ + " with goth level of " + gothicLevel_;
+        return gothName + " with goth level of " + gothicLevel;
     }
 
     /**
@@ -48,6 +48,6 @@ public class Goth implements Comparable <Goth> {
      */
     @Override
     public int compareTo(Goth goth) {
-        return Integer.compare(this.gothicLevel_, goth.gothicLevel_);
+        return Integer.compare(this.gothicLevel, goth.gothicLevel);
     }
 }
