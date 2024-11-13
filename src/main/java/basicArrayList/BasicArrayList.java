@@ -63,6 +63,7 @@ public class BasicArrayList <T> {
      * Добавление элемента в коллекцию по указанному индексу
      * @param index место на которое будет добавлен элемент
      * @param element элемент, добавляемый в коллекцию
+     * @return true при успешной вставке
      */
     public boolean add(int index, T element) {
         final int tempSize = size;
@@ -74,7 +75,6 @@ public class BasicArrayList <T> {
         size = tempSize + 1;
         return true;
     }
-
     /**
      * Добавление всех элементов BasicArrayList в уже существующий BasicArrayList
      * @param newArray BasicArrayList элементы которого будут добавлены
