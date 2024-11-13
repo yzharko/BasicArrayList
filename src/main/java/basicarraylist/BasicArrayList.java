@@ -53,7 +53,7 @@ public class BasicArrayList <T> implements BasicList <T> {
      */
     @Override
     public boolean add(T element) {
-        array[size] = (Object) element;
+        array[size] = element;
         size++;
 
         if (size == array.length) {
