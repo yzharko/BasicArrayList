@@ -5,9 +5,10 @@ import java.util.Collection;
 import java.util.NoSuchElementException;
 
 /**
- * Непотокобезопасная реализация, основанная на ArrayList. Предоставляет пользователю набор методов по добавлению, получению, изменению, удалению и очистке элементов.
+ * Непотокобезопасная реализация сомнительного аналога ArrayList, реализующая интерфейс BasicList.
+ * Предоставляет пользователю набор методов по добавлению, получению, изменению, удалению и очистке элементов.
  */
-public class BasicArrayList <T> {
+public class BasicArrayList <T> implements BasicList <T> {
     private Object[] array;
     private int size;
 
@@ -50,6 +51,7 @@ public class BasicArrayList <T> {
      * @param element элемент, добавляемый в коллекцию
      * @return true при успешной вставке
      */
+    @Override
     public boolean add(T element) {
         array[size] = (Object) element;
         size++;
@@ -65,6 +67,7 @@ public class BasicArrayList <T> {
      * @param element элемент, добавляемый в коллекцию
      * @return true при успешной вставке
      */
+    @Override
     public boolean add(int index, T element) {
         final int tempSize = size;
         Object[] newArray = array;
@@ -98,6 +101,7 @@ public class BasicArrayList <T> {
      * @throws NoSuchElementException при отсутствии указанного индекса
      * @return элемент коллекции с указанным индексом
      */
+    @Override
     public T get(int index) {
         if (index >= 0 && index < size) {
             return array(index);
@@ -137,6 +141,7 @@ public class BasicArrayList <T> {
      * @param element новый элемент
      * @throws NoSuchElementException при отсутствии указанного индекса
      */
+    @Override
     public void set(int index, T element) {
         if (index >= 0 && index < size) {
             T oldValue = array(index);
@@ -146,8 +151,9 @@ public class BasicArrayList <T> {
         }
     }
     /**
-     * Очищение текущую коллекцию
+     * Очищение текущей коллекции
      */
+    @Override
     public void clear() {
         for (int to = size, i = size = 0; i < to; i++) {
             array[i] = null;
@@ -157,6 +163,7 @@ public class BasicArrayList <T> {
      * Удаление элемента коллекции по указанному индексу
      * @param index место из которого будет удалён элемент
      */
+    @Override
     public void remove(int index) {
         for (int i = index; i < size - 1; ++i) {
             array[i] = array[i + 1];
