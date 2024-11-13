@@ -39,7 +39,7 @@ class BasicArrayListTest {
         final int capacity = -1;
 
         assertThrowsExactly(IllegalArgumentException.class, () -> {
-            BasicArrayList<Integer> basicArrayList = new BasicArrayList<>(capacity);
+            new BasicArrayList<Integer>(capacity);
         });
     }
     @Test
