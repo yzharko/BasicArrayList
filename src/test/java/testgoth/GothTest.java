@@ -45,6 +45,78 @@ class GothTest {
         assertEquals(expected, goth.getInfo());
     }
     @Test
+    void getHashCodeForIdenticalGoths() {
+        final String name = "GothName";
+        final int level = 10;
+        Goth goth = new Goth(name, level);
+
+        final String yaName = "GothName";
+        final int yaLevel = 10;
+        Goth yaGoth = new Goth(yaName, yaLevel);
+
+        int gothHashCode = goth.hashCode();
+        int yaGothHashCode = yaGoth.hashCode();
+        boolean actual = gothHashCode == yaGothHashCode;
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void getHashCodeForDifferentGoths() {
+        final String name = "GothName";
+        final int level = 10;
+        Goth goth = new Goth(name, level);
+
+        final String yaName = "YaGothName";
+        final int yaLevel = 20;
+        Goth yaGoth = new Goth(yaName, yaLevel);
+
+        int gothHashCode = goth.hashCode();
+        int yaGothHashCode = yaGoth.hashCode();
+        boolean actual = gothHashCode == yaGothHashCode;
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void getEqualsMethodResultForIdenticalGoths() {
+        final String name = "GothName";
+        final int level = 10;
+        Goth goth = new Goth(name, level);
+
+        final String yaName = "GothName";
+        final int yaLevel = 10;
+        Goth yaGoth = new Goth(yaName, yaLevel);
+
+        boolean actual = goth.equals(yaGoth);
+        boolean expected = true;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void getEqualsMethodResultForDifferentGoths() {
+        final String name = "GothName";
+        final int level = 10;
+        Goth goth = new Goth(name, level);
+
+        final String yaName = "YaGothName";
+        final int yaLevel = 20;
+        Goth yaGoth = new Goth(yaName, yaLevel);
+
+        boolean actual = goth.equals(yaGoth);
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
+    void getEqualsMethodResultForGothAndObject() {
+        final String name = "GothName";
+        final int level = 10;
+        Goth goth = new Goth(name, level);
+
+        Object object = new Object();
+
+        boolean actual = goth.equals(object);
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+    @Test
     void compareIdenticalGoths() {
         final String name = "GothName";
         final int level = 10;
@@ -70,6 +142,7 @@ class GothTest {
         int expected = -1;
         assertEquals(expected, goth.compareTo(yaGoth));
     }
+
     @Test
     void compareMajorGothToMinorGoth() {
         final String name = "GothName";
