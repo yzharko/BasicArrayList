@@ -43,8 +43,10 @@ public class BasicQuickSort {
         quicksort(array, leftPointer + 1, highIndex);
     }
     /**
-     * Разделяет переданный BasicArrayList на разделы "меньше текущего элемента" и "больше текущего эелемента":
-     * если значение leftPointer равен или меньше чем pivot, то перемещаем налево от него, если больше, то перемещаем направо.
+     * Разделяет переданный BasicArrayList на разделы "меньше pivot элемента" и "больше pivot эелемента":
+     * leftPointer ищет элемент больше или равно от pivot, rightPointer ищет элемент меньше или равно от pivot.
+     * После чего, найденные элементы меняются местами. Алгоритм повторяется до тех пор, пока leftPointer
+     * не будет равен rightPointer-у и меняет местами элементы leftPointer и pivot.
      * @param array BasicArrayList, который необходимо отсортировать
      * @param lowIndex первый элемент
      * @param highIndex последний элемент
@@ -55,14 +57,18 @@ public class BasicQuickSort {
     private static <T extends Comparable <T>>
     int partition(BasicArrayList <T> array, int lowIndex, int highIndex, T pivot) {
         int leftPointer = lowIndex;
+        int rightPointer = highIndex;
 
-        for (int elem = lowIndex; elem < highIndex; ++elem) {
-            if (array.get(elem).compareTo(pivot) <= 0) {
-                swap(array, elem, leftPointer);
+        while (leftPointer < rightPointer) {
+            while (array.get(leftPointer).compareTo(pivot) <= 0 && leftPointer < rightPointer) {
                 leftPointer++;
             }
+            while (array.get(rightPointer).compareTo(pivot) >= 0 && leftPointer < rightPointer) {
+                rightPointer--;
+            }
+            swap(array, leftPointer, rightPointer);
         }
-        swap(array, highIndex, leftPointer);
+        swap(array, leftPointer, highIndex);
         return leftPointer;
     }
     /**
