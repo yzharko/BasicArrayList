@@ -41,6 +41,34 @@ public class Goth implements Comparable <Goth> {
     }
 
     /**
+     * Сравнение объекта по отношению к которому вызывается метод с тем объектом,
+     * который передаётся в качестве аргумента данного метода
+     * @param object объект с которым производится сравнение
+     * @return true - если объекты равны, false - если объекты не равны
+     */
+    public boolean equals(Object object) {
+        if (object == null) return false;
+        if (!(object instanceof Goth other)) {
+            return false;
+        }
+        if (object == this) {
+            return true;
+        }
+        boolean nameEquals = (this.gothName == null && other.gothName == null)
+                || (this.gothName != null && this.gothName.equals(other.gothName));
+        boolean levelEquals = (this.gothicLevel == other.gothicLevel);
+        return nameEquals && levelEquals;
+    }
+    /**
+     * Вычисление хеш-кода для объекта класса
+     * @return хеш-код объекта
+     */
+    public int hashCode() {
+        int result = gothName != null ? gothName.hashCode() : 0;
+        result = 31 * result + gothicLevel;
+        return result;
+    }
+    /**
      * Перегрузка метода для сравнения 2х экземпляров класса
      * @param goth объект с которым производится сравнение.
      * @return 0 если уровень объекта равен уровню аргумента; -1 если уровень объекта меньше уровня аргумента;
