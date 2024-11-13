@@ -5,9 +5,9 @@ import somegoth.Goth;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GothTest {
+class GothTest {
     @Test
-    public void getGothName() {
+    void getGothName() {
         final String name = "GothName";
         final int level = 10;
 
@@ -16,7 +16,7 @@ public class GothTest {
         assertEquals(name, goth.getGothName());
     }
     @Test
-    public void getGothLevel() {
+    void getGothLevel() {
         final String name = "GothName";
         final int level = 10;
 
@@ -25,7 +25,7 @@ public class GothTest {
         assertEquals(level, goth.getGothicLevel());
     }
     @Test
-    public void createGoth() {
+    void createGoth() {
         final String name = "GothName";
         final int level = 10;
 
@@ -35,7 +35,7 @@ public class GothTest {
         assertEquals(level, goth.getGothicLevel());
     }
     @Test
-    public void getGothInfo() {
+    void getGothInfo() {
         final String name = "GothName";
         final int level = 10;
 
@@ -45,7 +45,7 @@ public class GothTest {
         assertEquals(expected, goth.getInfo());
     }
     @Test
-    public void compareIdenticalGoths() {
+    void compareIdenticalGoths() {
         final String name = "GothName";
         final int level = 10;
         Goth goth = new Goth(name, level);
@@ -58,7 +58,7 @@ public class GothTest {
         assertEquals(expected, goth.compareTo(yaGoth));
     }
     @Test
-    public void compareMinorGothToMajorGoth() {
+    void compareMinorGothToMajorGoth() {
         final String name = "GothName";
         final int level = 10;
         Goth goth = new Goth(name, level);
@@ -71,7 +71,7 @@ public class GothTest {
         assertEquals(expected, goth.compareTo(yaGoth));
     }
     @Test
-    public void compareMajorGothToMinorGoth() {
+    void compareMajorGothToMinorGoth() {
         final String name = "GothName";
         final int level = 20;
         Goth goth = new Goth(name, level);

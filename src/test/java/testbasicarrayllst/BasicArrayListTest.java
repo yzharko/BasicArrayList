@@ -7,17 +7,17 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BasicArrayListTest {
+class BasicArrayListTest {
     @Test
-    public void createBasicArrayListWithoutProvidingCapacity() {
-        BasicArrayList <Integer> basicArrayList = new BasicArrayList<>();
+    void createBasicArrayListWithoutProvidingCapacity() {
+        BasicArrayList<Integer> basicArrayList = new BasicArrayList<>();
         final int actual = basicArrayList.getLength();
         final int expected = 10;
 
         assertEquals(expected, actual);
     }
     @Test
-    public void createBasicArrayListWithProvidingCorrectCapacity() {
+    void createBasicArrayListWithProvidingCorrectCapacity() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         final int actual = basicArrayList.getLength();
@@ -26,7 +26,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void createBasicArrayListWithProvidingZeroCapacity() {
+    void createBasicArrayListWithProvidingZeroCapacity() {
         final int capacity = 0;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         final int actual = basicArrayList.getLength();
@@ -35,7 +35,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void createBasicArrayListWithProvidingNegativeCapacity() {
+    void createBasicArrayListWithProvidingNegativeCapacity() {
         final int capacity = -1;
 
         assertThrowsExactly(IllegalArgumentException.class, () -> {
@@ -43,7 +43,7 @@ public class BasicArrayListTest {
         });
     }
     @Test
-    public void createBasicArrayListFromArrayList() {
+    void createBasicArrayListFromArrayList() {
         final int capacity = 5;
         ArrayList <Integer> arrayList = new ArrayList<>(capacity);
         for (int i = 0; i < capacity; i++) {
@@ -56,7 +56,7 @@ public class BasicArrayListTest {
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void convertBasicArrayListToArray() {
+    void convertBasicArrayListToArray() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         for (int i = 0; i < capacity; i++) {
@@ -68,7 +68,7 @@ public class BasicArrayListTest {
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void setElementToTheBasicArrayList() {
+    void setElementToTheBasicArrayList() {
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>();
         basicArrayList.add(1);
         final int index = 0;
@@ -80,7 +80,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void addElementToTheBasicArrayList() {
+    void addElementToTheBasicArrayList() {
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>();
         final boolean actual = basicArrayList.add(1);
         final boolean expected = true;
@@ -88,7 +88,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void addElementToTheBasicArrayListAtSpecifiedIndex() {
+    void addElementToTheBasicArrayListAtSpecifiedIndex() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         for (int i = 0; i < capacity; i++) {
@@ -101,7 +101,7 @@ public class BasicArrayListTest {
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void addAllElementsToTheBasicArrayList() {
+    void addAllElementsToTheBasicArrayList() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         BasicArrayList <Integer> toCopy = new BasicArrayList<>(capacity);
@@ -113,7 +113,7 @@ public class BasicArrayListTest {
         assertArrayEquals(toCopy.toArray(), basicArrayList.toArray());
     }
     @Test
-    public void getElementFromBasicArrayListAtSpecifiedIndex() {
+    void getElementFromBasicArrayListAtSpecifiedIndex() {
         final int capacity = 3;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         basicArrayList.add(1);
@@ -125,7 +125,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void getFirstElementFromBasicArrayList() {
+    void getFirstElementFromBasicArrayList() {
         final int capacity = 3;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         basicArrayList.add(1);
@@ -137,7 +137,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void getLastElementFromBasicArrayList() {
+    void getLastElementFromBasicArrayList() {
         final int capacity = 3;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         basicArrayList.add(1);
@@ -149,7 +149,7 @@ public class BasicArrayListTest {
         assertEquals(expected, actual);
     }
     @Test
-    public void removeElementFromBasicArrayList() {
+    void removeElementFromBasicArrayList() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         for (int i = 0; i < capacity; i++) {
@@ -162,7 +162,7 @@ public class BasicArrayListTest {
         assertArrayEquals(expected, actual);
     }
     @Test
-    public void clearBasicArrayList() {
+    void clearBasicArrayList() {
         final int capacity = 5;
         BasicArrayList <Integer> basicArrayList = new BasicArrayList<>(capacity);
         for (int i = 0; i < capacity; i++) {

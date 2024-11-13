@@ -11,9 +11,9 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class BasicQuickSortTest {
+class BasicQuickSortTest {
     @Test
-    public void basicQuickSortForBasicArrayListOfIntegers() {
+    void basicQuickSortForBasicArrayListOfIntegers() {
         final int capacity = 10;
         ArrayList <Integer> arrayList = new ArrayList<>(capacity);
         Random rand = new Random();
@@ -29,7 +29,7 @@ public class BasicQuickSortTest {
         assertArrayEquals(arrayList.toArray(), basicArrayList.toArray());
     }
     @Test
-    public void basicQuickSortForBasicArrayListOfDoubles() {
+    void basicQuickSortForBasicArrayListOfDoubles() {
         final int capacity = 10;
         ArrayList <Double> arrayList = new ArrayList<>(capacity);
         Random rand = new Random();
@@ -45,7 +45,7 @@ public class BasicQuickSortTest {
         assertArrayEquals(arrayList.toArray(), basicArrayList.toArray());
     }
     @Test
-    public void basicQuickSortForBasicArrayListOfGoths() {
+    void basicQuickSortForBasicArrayListOfGoths() {
         final int capacity = 2;
         final Goth goth = new Goth("Cheburashka", 12);
         final Goth yaGoth = new Goth("Gena", 150);
