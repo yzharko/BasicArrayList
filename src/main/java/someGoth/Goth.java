@@ -48,12 +48,6 @@ public class Goth implements Comparable <Goth> {
      */
     @Override
     public int compareTo(Goth goth) {
-        if (this.gothicLevel_ == goth.gothicLevel_) {
-            return 0;
-        } else if (this.gothicLevel_ < goth.gothicLevel_) {
-            return -1;
-        } else {
-            return 1;
-        }
+        return Integer.compare(this.gothicLevel_, goth.gothicLevel_);
     }
 }
