@@ -1,4 +1,4 @@
-package basicArrayList;
+package basicarraylist;
 
 /**
  *Интерфейс указывает базовые требования для реализации в виде:

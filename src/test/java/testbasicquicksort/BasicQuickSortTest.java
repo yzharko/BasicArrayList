@@ -1,9 +1,9 @@
-package basicQuickSortTest;
+package testbasicquicksort;
 
-import basicArrayList.BasicArrayList;
-import basicQuickSort.BasicQuickSort;
+import basicarraylist.BasicArrayList;
+import basicquicksort.BasicQuickSort;
 import org.junit.jupiter.api.Test;
-import someGoth.Goth;
+import somegoth.Goth;
 
 import java.util.ArrayList;
 import java.util.Collections;

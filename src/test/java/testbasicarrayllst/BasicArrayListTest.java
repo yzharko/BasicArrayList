@@ -1,6 +1,6 @@
-package basicArrayListTest;
+package testbasicarrayllst;
 
-import basicArrayList.BasicArrayList;
+import basicarraylist.BasicArrayList;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

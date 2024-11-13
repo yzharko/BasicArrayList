@@ -1,7 +1,7 @@
-package gothTest;
+package testgoth;
 
 import org.junit.jupiter.api.Test;
-import someGoth.Goth;
+import somegoth.Goth;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

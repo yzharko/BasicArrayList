@@ -1,4 +1,4 @@
-package someGoth;
+package somegoth;
 
 /**
  * Сферический в вакууме класс для быстрой проверки такогой же быстрой quicksort

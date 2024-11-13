@@ -1,6 +1,6 @@
-package basicQuickSort;
+package basicquicksort;
 
-import basicArrayList.BasicArrayList;
+import basicarraylist.BasicArrayList;
 
 import java.util.*;
 
