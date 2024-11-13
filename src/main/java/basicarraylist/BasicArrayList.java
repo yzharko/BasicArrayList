@@ -83,7 +83,7 @@ public class BasicArrayList <T> implements BasicList <T> {
      * @param newArray BasicArrayList элементы которого будут добавлены
      * @return true при успешной вставке, false при передаче пустого BasicArrayList
      */
-    public boolean addAll(BasicArrayList newArray) {
+    public boolean addAll(BasicArrayList <T> newArray) {
         int newSize = newArray.size;
         if (newSize == 0)
             return false;
