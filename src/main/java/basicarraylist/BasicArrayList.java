@@ -12,7 +12,7 @@ public class BasicArrayList <T> implements BasicList <T> {
     private Object[] array;
     private int size;
 
-    private final int INITIAL_CAPACITY = 10;
+    private static final int INITIAL_CAPACITY = 10;
     private static final Object[] EMPTY_ARRAY = {};
 
     /**
