@@ -139,13 +139,15 @@ public class BasicArrayList <T> implements BasicList <T> {
      * Замена элемента по указанному индексу на новый
      * @param index место элемента, который будет заменён
      * @param element новый элемент
+     * @return заменённый элемент
      * @throws NoSuchElementException при отсутствии указанного индекса
      */
     @Override
-    public void set(int index, T element) {
+    public T set(int index, T element) {
         if (index >= 0 && index < size) {
             T oldValue = array(index);
             array[index] = element;
+            return oldValue;
         } else {
             throw new NoSuchElementException();
         }

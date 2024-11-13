@@ -31,8 +31,9 @@ public interface BasicList <T> {
      * Замена элемента по указанному индексу на новый
      * @param index место элемента, который будет заменён
      * @param element новый элемент
+     * @return заменённый элемент
      */
-    void set(int index, T element);
+    T set(int index, T element);
     /**
      * Очищение текущей коллекции
      */
