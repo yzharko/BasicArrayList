@@ -39,7 +39,6 @@ public class Goth implements Comparable <Goth> {
     public String getInfo() {
         return gothName + " with goth level of " + gothicLevel;
     }
-
     /**
      * Сравнение объекта по отношению к которому вызывается метод с тем объектом,
      * который передаётся в качестве аргумента данного метода
