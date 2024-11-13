@@ -10,6 +10,10 @@ import java.util.*;
  */
 public class BasicQuickSort {
     /**
+     *Экземпляр класса Random, необходимый для случайного выбора элемента между началом и концом коллекции
+     */
+    private static final Random rnd = new Random();
+    /**
      * Перегруженный метод quicksort для удобства пользования
      * @param array BasicArrayList, который необходимо отсортировать
      * @param <T> обязан реализовывать интерфейс Comparable
@@ -33,7 +37,7 @@ public class BasicQuickSort {
         if (lowIndex >= highIndex) {
             return;
         }
-        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
+        int pivotIndex = rnd.nextInt(highIndex - lowIndex) + lowIndex;
         T pivot = array.get(pivotIndex);
         swap(array, pivotIndex, highIndex);
 
