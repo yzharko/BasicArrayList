@@ -197,7 +197,7 @@ public class BasicArrayList <T> implements BasicList <T> {
      * @return Расширенная коллекция
      */
     private Object[] expand() {
-        return array = Arrays.copyOf(array, calculateNewCapacity());
+        return Arrays.copyOf(array, calculateNewCapacity());
     }
     /**
      * Вычисление новой длины коллекции
